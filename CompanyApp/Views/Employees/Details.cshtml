@@ -1,0 +1,22 @@
+@model CompanyApp.Models.Employee
+@{ ViewData["Title"] = "Employee Details"; }
+
+<h2 class="mb-4">👤 Employee Details</h2>
+<div class="card p-4" style="max-width:500px">
+    <dl class="row">
+        <dt class="col-sm-4 fw-bold">No.</dt>
+        <dd class="col-sm-8">@Model.EmployeeNo</dd>
+        <dt class="col-sm-4 fw-bold">Name</dt>
+        <dd class="col-sm-8">@Model.EmployeeName</dd>
+        <dt class="col-sm-4 fw-bold">Salary</dt>
+        <dd class="col-sm-8">@Model.Salary.ToString("N0")</dd>
+        <dt class="col-sm-4 fw-bold">Department</dt>
+        <dd class="col-sm-8">@Model.Department?.DepartmentName (@Model.Department?.DepartmentLocation)</dd>
+        <dt class="col-sm-4 fw-bold">Last Modified</dt>
+        <dd class="col-sm-8">@Model.LastModifyDate.ToString("dd.MM.yyyy HH:mm")</dd>
+    </dl>
+    <div class="d-flex gap-2 mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.EmployeeNo" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Back</a>
+    </div>
+</div>

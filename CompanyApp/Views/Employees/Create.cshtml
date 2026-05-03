@@ -1,0 +1,30 @@
+@model CompanyApp.Models.Employee
+@{ ViewData["Title"] = "New Employee"; }
+
+<h2 class="mb-4">👤 New Employee</h2>
+<div class="card p-4" style="max-width:500px">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label asp-for="EmployeeName" class="form-label fw-bold"></label>
+            <input asp-for="EmployeeName" class="form-control" />
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Salary" class="form-label fw-bold"></label>
+            <input asp-for="Salary" class="form-control" />
+            <span asp-validation-for="Salary" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DepartmentNo" class="form-label fw-bold"></label>
+            <select asp-for="DepartmentNo" class="form-select" asp-items="ViewBag.DepartmentNo">
+                <option value="">-- Select Department --</option>
+            </select>
+            <span asp-validation-for="DepartmentNo" class="text-danger"></span>
+        </div>
+        <div class="d-flex gap-2">
+            <input type="submit" value="Create" class="btn btn-primary" />
+            <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

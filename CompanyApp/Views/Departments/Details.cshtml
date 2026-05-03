@@ -1,0 +1,18 @@
+@model CompanyApp.Models.Department
+@{ ViewData["Title"] = "Department Details"; }
+
+<h2 class="mb-4">🏬 Department Details</h2>
+<div class="card p-4" style="max-width:500px">
+    <dl class="row">
+        <dt class="col-sm-4 fw-bold">No.</dt>
+        <dd class="col-sm-8">@Model.DepartmentNo</dd>
+        <dt class="col-sm-4 fw-bold">Name</dt>
+        <dd class="col-sm-8">@Model.DepartmentName</dd>
+        <dt class="col-sm-4 fw-bold">Location</dt>
+        <dd class="col-sm-8">@Model.DepartmentLocation</dd>
+    </dl>
+    <div class="d-flex gap-2 mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.DepartmentNo" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Back</a>
+    </div>
+</div>
